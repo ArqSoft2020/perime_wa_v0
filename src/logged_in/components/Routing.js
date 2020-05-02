@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import PropTypes from "prop-types";
 import { Switch } from "react-router-dom";
 import { withStyles } from "@material-ui/core";
-import Dashboard from "./dashboard/Dashboard";
+import SimpleMap from "./map/SimpleMap";
 import Posts from "./posts/Posts";
 import Subscription from "./subscription/Subscription";
 import PropsRoute from "../../shared/components/PropsRoute";
@@ -59,7 +59,7 @@ function Routing(props) {
     setTargets,
     setPosts,
     isAccountActivated,
-    selectDashboard,
+    
     selectPosts,
     selectSubscription,
     openAddBalanceDialog,
@@ -89,7 +89,7 @@ function Routing(props) {
         />
         <PropsRoute
           path=""
-          component={Dashboard}
+          component={SimpleMap}
           toggleAccountActivation={toggleAccountActivation}
           pushMessageToSnackbar={pushMessageToSnackbar}
           CardChart={CardChart}
@@ -97,7 +97,7 @@ function Routing(props) {
           targets={targets}
           setTargets={setTargets}
           isAccountActivated={isAccountActivated}
-          selectDashboard={selectDashboard}
+          
         />
       </Switch>
     </div>
@@ -120,7 +120,7 @@ Routing.propTypes = {
   statistics: PropTypes.object.isRequired,
   targets: PropTypes.arrayOf(PropTypes.object).isRequired,
   isAccountActivated: PropTypes.bool.isRequired,
-  selectDashboard: PropTypes.func.isRequired,
+  
   selectPosts: PropTypes.func.isRequired,
   selectSubscription: PropTypes.func.isRequired,
   openAddBalanceDialog: PropTypes.func.isRequired,
