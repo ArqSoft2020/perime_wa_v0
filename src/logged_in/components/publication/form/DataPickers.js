@@ -23,8 +23,8 @@ export default function MaterialUIPickers() {
           variant="inline"
           format="MM/dd/yyyy"
           margin="normal"
-          id="date-picker-inline"
-          label="Date picker inline"
+          id="expiration_date"
+          label="Fecha Vencimiento"
           value={selectedDate}
           onChange={handleDateChange}
           KeyboardButtonProps={{

@@ -7,6 +7,7 @@ import{
 }  from '@material-ui/core/' ;
 
 import DataPickers from "./form/DataPickers"
+import Price from "./form/Price"
 
 import {
   MuiPickersUtilsProvider,
@@ -97,7 +98,7 @@ class PublicationForm extends Component{
 
 
       <DataPickers />
-
+      <Price />
 
 
       </form>
