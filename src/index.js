@@ -6,28 +6,28 @@ import { ApolloProvider,  useQuery} from "@apollo/react-hooks";
 
 
 const client = new ApolloClient({
-  uri: "https://rickandmortyapi.com/graphql"
+  uri: "http://3.82.189.202:3000/"
 });
 
 function CharactersQuery() {
   const { loading, error, data } = useQuery(gql`
+  {
+    categorys
     {
-      characters {
-        results {
-          id
-          name
-        }
-      }
+      id_category
+      name_category
+      type_category
     }
+  }
   `);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  return data.characters.results.map(({ id, name }) => (
-    <div key={id}>
+  return data.categorys.map(({ id_category, name_category, type_category }) => (
+    <div key={id_category}>
       <p>
-        {id}: {name}
+        <li>{id_category}: {name_category} {type_category}</li>
       </p>
     </div>
   ));
