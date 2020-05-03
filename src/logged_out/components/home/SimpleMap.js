@@ -7,7 +7,7 @@ class SimpleMap extends Component {
   static defaultProps = {
     center: {
       lat: 4.6355,
-      lng: -74.08
+      lng: -74.082
     },
     zoom: 15
   };
@@ -23,7 +23,7 @@ class SimpleMap extends Component {
         >
           <AnyReactComponent
             lat={4.635556}
-            lng={-74.082778}
+            lng={-74.082778} 
             text="My city"
           />
         </GoogleMapReact>
