@@ -32,13 +32,13 @@ function Main(props) {
   const selectHome = useCallback(() => {
     smoothScrollTop();
     document.title =
-      "WaVer - Free template for building an SaaS or admin application";
+      "Perime web app";
     setSelectedTab("Home");
   }, [setSelectedTab]);
 
   const selectBlog = useCallback(() => {
     smoothScrollTop();
-    document.title = "WaVer - Blog";
+    document.title = "Perime - Blog";
     setSelectedTab("Blog");
   }, [setSelectedTab]);
 

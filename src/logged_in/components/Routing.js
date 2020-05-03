@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import PropTypes from "prop-types";
 import { Switch } from "react-router-dom";
 import { withStyles } from "@material-ui/core";
-import Dashboard from "./dashboard/Dashboard";
+import SimpleMap from "./map/SimpleMap";
 import Posts from "./posts/Posts";
 import Subscription from "./subscription/Subscription";
 import PropsRoute from "../../shared/components/PropsRoute";
@@ -12,7 +12,7 @@ const styles = (theme) => ({
     margin: theme.spacing(1),
     width: "auto",
     [theme.breakpoints.up("xs")]: {
-      width: "95%",
+      width: "105%",
       marginLeft: "auto",
       marginRight: "auto",
       marginTop: theme.spacing(4),
@@ -33,9 +33,9 @@ const styles = (theme) => ({
       marginRight: "auto",
     },
     [theme.breakpoints.up("lg")]: {
-      marginTop: theme.spacing(6),
-      marginBottom: theme.spacing(6),
-      width: "70%",
+      marginTop: theme.spacing(0),
+      marginBottom: theme.spacing(0),
+      width: "100%",
       marginLeft: "auto",
       marginRight: "auto",
     },
@@ -59,7 +59,7 @@ function Routing(props) {
     setTargets,
     setPosts,
     isAccountActivated,
-    selectDashboard,
+    
     selectPosts,
     selectSubscription,
     openAddBalanceDialog,
@@ -69,7 +69,7 @@ function Routing(props) {
       <Switch>
         <PropsRoute
           path="/c/posts"
-          component={Posts}
+          component={SimpleMap}
           EmojiTextArea={EmojiTextArea}
           ImageCropper={ImageCropper}
           Dropzone={Dropzone}
@@ -89,7 +89,7 @@ function Routing(props) {
         />
         <PropsRoute
           path=""
-          component={Dashboard}
+          component={SimpleMap}
           toggleAccountActivation={toggleAccountActivation}
           pushMessageToSnackbar={pushMessageToSnackbar}
           CardChart={CardChart}
@@ -97,7 +97,7 @@ function Routing(props) {
           targets={targets}
           setTargets={setTargets}
           isAccountActivated={isAccountActivated}
-          selectDashboard={selectDashboard}
+          
         />
       </Switch>
     </div>
@@ -120,7 +120,7 @@ Routing.propTypes = {
   statistics: PropTypes.object.isRequired,
   targets: PropTypes.arrayOf(PropTypes.object).isRequired,
   isAccountActivated: PropTypes.bool.isRequired,
-  selectDashboard: PropTypes.func.isRequired,
+  
   selectPosts: PropTypes.func.isRequired,
   selectSubscription: PropTypes.func.isRequired,
   openAddBalanceDialog: PropTypes.func.isRequired,
