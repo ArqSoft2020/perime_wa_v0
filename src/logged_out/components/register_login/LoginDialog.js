@@ -65,7 +65,7 @@ function LoginDialog(props) {
       }, 1500);
     } else {
       setTimeout(() => {
-        history.push("/c/dashboard");
+        history.push("/user/publication");
       }, 150);
     }
   }, [setIsLoading, loginEmail, loginPassword, history, setStatus]);
