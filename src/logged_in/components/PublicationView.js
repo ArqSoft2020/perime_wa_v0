@@ -11,7 +11,10 @@ class PublicationView extends Component {
         return (
         <div>
             <Grid container >
-                <Grid xs={6} sm={3}>
+                <Grid xs={6} sm={3}
+                    container
+                    direction="column"
+                >
                     <PublicationForm />
                 </Grid>
                 <Grid xs={12} sm={9} >
