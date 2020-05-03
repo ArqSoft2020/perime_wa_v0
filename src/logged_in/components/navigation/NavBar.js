@@ -24,9 +24,7 @@ import ExploreIcon from '@material-ui/icons/Explore';
 import EditLocationIcon from '@material-ui/icons/EditLocation';
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import MenuIcon from "@material-ui/icons/Menu";
-import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
 import MessagePopperButton from "./MessagePopperButton";
-import SideDrawer from "./SideDrawer";
 import Balance from "./Balance";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
 import profilePicture from "../../dummy_data/images/profilePicture.jpg";
@@ -131,7 +129,7 @@ function NavBar(props) {
   // Will be use to make website more accessible by screen readers
   const links = useRef([]);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);
+  
 
   const openMobileDrawer = useCallback(() => {
     setIsMobileOpen(true);
@@ -140,14 +138,6 @@ function NavBar(props) {
   const closeMobileDrawer = useCallback(() => {
     setIsMobileOpen(false);
   }, [setIsMobileOpen]);
-
-  const openDrawer = useCallback(() => {
-    setIsSideDrawerOpen(true);
-  }, [setIsSideDrawerOpen]);
-
-  const closeDrawer = useCallback(() => {
-    setIsSideDrawerOpen(false);
-  }, [setIsSideDrawerOpen]);
 
   const menuItems = [
     {

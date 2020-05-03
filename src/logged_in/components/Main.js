@@ -50,7 +50,7 @@ function Main(props) {
   const [targets, setTargets] = useState([]);
   const [messages, setMessages] = useState([]);
   const [isAccountActivated, setIsAccountActivated] = useState(false);
-  const [isAddBalanceDialogOpen, setIsAddBalanceDialogOpen] = useState(false);
+  const [setIsAddBalanceDialogOpen] = useState(false);
   const [pushMessageToSnackbar, setPushMessageToSnackbar] = useState(null);
 
   const fetchRandomTargets = useCallback(() => {
@@ -76,16 +76,7 @@ function Main(props) {
     setIsAddBalanceDialogOpen(true);
   }, [setIsAddBalanceDialogOpen]);
 
-  const closeAddBalanceDialog = useCallback(() => {
-    setIsAddBalanceDialogOpen(false);
-  }, [setIsAddBalanceDialogOpen]);
-
-  const onPaymentSuccess = useCallback(() => {
-    pushMessageToSnackbar({
-      text: "Your balance has been updated.",
-    });
-    setIsAddBalanceDialogOpen(false);
-  }, [pushMessageToSnackbar, setIsAddBalanceDialogOpen]);
+  
 
   const fetchRandomStatistics = useCallback(() => {
     const statistics = { profit: [], views: [] };
