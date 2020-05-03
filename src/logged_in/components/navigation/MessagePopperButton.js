@@ -12,7 +12,7 @@ import {
   Box,
   withStyles
 } from "@material-ui/core";
-import MessageIcon from "@material-ui/icons/Message";
+import FeedbackIcon from '@material-ui/icons/Feedback';
 import MessageListItem from "./MessageListItem";
 
 const styles = theme => ({
@@ -60,7 +60,7 @@ function MessagePopperButton(props) {
         aria-describedby={id}
         color="primary"
       >
-        <MessageIcon />
+        <FeedbackIcon />
       </IconButton>
       <Popover
         id={id}
@@ -79,7 +79,7 @@ function MessagePopperButton(props) {
       >
         <AppBar position="static" color="inherit" className={classes.noShadow}>
           <Box pt={1} pl={2} pb={1} pr={1}>
-            <Typography variant="subtitle1">Messages</Typography>
+            <Typography variant="subtitle1">Comentarios</Typography>
           </Box>
           <Divider className={classes.divider} />
         </AppBar>

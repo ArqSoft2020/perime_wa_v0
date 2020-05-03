@@ -263,14 +263,7 @@ function NavBar(props) {
               )}
             </ListItem>
           </Box>
-          <IconButton
-            onClick={openDrawer}
-            color="primary"
-            aria-label="Open Sidedrawer"
-          >
-            <SupervisorAccountIcon />
-          </IconButton>
-          <SideDrawer open={isSideDrawerOpen} onClose={closeDrawer} />
+         
         </Toolbar>
       </AppBar>
       <Hidden xsDown>
