@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import { Switch } from "react-router-dom";
 import { withStyles } from "@material-ui/core";
 import SimpleMap from "./map/SimpleMap";
-import Posts from "./posts/Posts";
-import Subscription from "./subscription/Subscription";
+
 import PropsRoute from "../../shared/components/PropsRoute";
 
 const styles = (theme) => ({
@@ -51,7 +50,6 @@ function Routing(props) {
     DateTimePicker,
     pushMessageToSnackbar,
     posts,
-    transactions,
     toggleAccountActivation,
     CardChart,
     statistics,
@@ -60,9 +58,6 @@ function Routing(props) {
     setPosts,
     isAccountActivated,
     
-    selectPosts,
-    selectSubscription,
-    openAddBalanceDialog,
   } = props;
   return (
     <div className={classes.wrapper}>
@@ -77,16 +72,9 @@ function Routing(props) {
           pushMessageToSnackbar={pushMessageToSnackbar}
           posts={posts}
           setPosts={setPosts}
-          selectPosts={selectPosts}
+          
         />
-        <PropsRoute
-          path="/c/subscription"
-          component={Subscription}
-          transactions={transactions}
-          pushMessageToSnackbar={pushMessageToSnackbar}
-          selectSubscription={selectSubscription}
-          openAddBalanceDialog={openAddBalanceDialog}
-        />
+
         <PropsRoute
           path=""
           component={SimpleMap}
@@ -122,7 +110,6 @@ Routing.propTypes = {
   isAccountActivated: PropTypes.bool.isRequired,
   
   selectPosts: PropTypes.func.isRequired,
-  selectSubscription: PropTypes.func.isRequired,
   openAddBalanceDialog: PropTypes.func.isRequired,
 };
 
