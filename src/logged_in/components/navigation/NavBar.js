@@ -20,9 +20,8 @@ import {
   isWidthUp,
   withWidth
 } from "@material-ui/core";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import ImageIcon from "@material-ui/icons/Image";
-import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
+import ExploreIcon from '@material-ui/icons/Explore';
+import EditLocationIcon from '@material-ui/icons/EditLocation';
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import MenuIcon from "@material-ui/icons/Menu";
 import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
@@ -153,18 +152,18 @@ function NavBar(props) {
   const menuItems = [
     {
       link: "/c/dashboard",
-      name: "Dashboard",
+      name: "Map",
       onClick: closeMobileDrawer,
       icon: {
         desktop: (
-          <DashboardIcon
+          <ExploreIcon
             className={
               selectedTab === "Dashboard" ? classes.textPrimary : "text-white"
             }
             fontSize="small"
           />
         ),
-        mobile: <DashboardIcon className="text-white" />
+        mobile: <ExploreIcon className="text-white" />
       }
     },
     {
@@ -173,34 +172,17 @@ function NavBar(props) {
       onClick: closeMobileDrawer,
       icon: {
         desktop: (
-          <ImageIcon
+          <EditLocationIcon
             className={
               selectedTab === "Posts" ? classes.textPrimary : "text-white"
             }
             fontSize="small"
           />
         ),
-        mobile: <ImageIcon className="text-white" />
+        mobile: <EditLocationIcon className="text-white" />
       }
     },
-    {
-      link: "/c/subscription",
-      name: "Subscription",
-      onClick: closeMobileDrawer,
-      icon: {
-        desktop: (
-          <AccountBalanceIcon
-            className={
-              selectedTab === "Subscription"
-                ? classes.textPrimary
-                : "text-white"
-            }
-            fontSize="small"
-          />
-        ),
-        mobile: <AccountBalanceIcon className="text-white" />
-      }
-    },
+
     {
       link: "/",
       name: "Logout",

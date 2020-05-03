@@ -12,7 +12,7 @@ const styles = (theme) => ({
     margin: theme.spacing(1),
     width: "auto",
     [theme.breakpoints.up("xs")]: {
-      width: "95%",
+      width: "105%",
       marginLeft: "auto",
       marginRight: "auto",
       marginTop: theme.spacing(4),
@@ -33,9 +33,9 @@ const styles = (theme) => ({
       marginRight: "auto",
     },
     [theme.breakpoints.up("lg")]: {
-      marginTop: theme.spacing(6),
-      marginBottom: theme.spacing(6),
-      width: "70%",
+      marginTop: theme.spacing(0),
+      marginBottom: theme.spacing(0),
+      width: "100%",
       marginLeft: "auto",
       marginRight: "auto",
     },
@@ -69,7 +69,7 @@ function Routing(props) {
       <Switch>
         <PropsRoute
           path="/c/posts"
-          component={Posts}
+          component={SimpleMap}
           EmojiTextArea={EmojiTextArea}
           ImageCropper={ImageCropper}
           Dropzone={Dropzone}
