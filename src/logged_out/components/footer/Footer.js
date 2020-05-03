@@ -8,8 +8,7 @@ import {
   Hidden,
   withStyles,
   withWidth,
-  isWidthUp,
-  TextField
+  isWidthUp  
 } from "@material-ui/core";
 import PhoneIcon from "@material-ui/icons/Phone";
 import MailIcon from "@material-ui/icons/Mail";
@@ -88,7 +87,7 @@ const infos = [
 
 
 function Footer(props) {
-  const { classes, theme, width } = props;
+  const { classes,  width } = props;
   return (
     <footer className="lg-p-top">
 
