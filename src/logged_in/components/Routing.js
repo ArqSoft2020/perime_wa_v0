@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core";
 import SimpleMap from "./map/SimpleMap";
 
 import PropsRoute from "../../shared/components/PropsRoute";
+import PublicationView from "./PublicationView";
 
 const styles = (theme) => ({
   wrapper: {
@@ -63,8 +64,8 @@ function Routing(props) {
     <div className={classes.wrapper}>
       <Switch>
         <PropsRoute
-          path="/c/posts"
-          component={SimpleMap}
+          path="/user/publication"
+          component={PublicationView}
           EmojiTextArea={EmojiTextArea}
           ImageCropper={ImageCropper}
           Dropzone={Dropzone}
@@ -76,7 +77,7 @@ function Routing(props) {
         />
 
         <PropsRoute
-          path=""
+          path="map"
           component={SimpleMap}
           toggleAccountActivation={toggleAccountActivation}
           pushMessageToSnackbar={pushMessageToSnackbar}

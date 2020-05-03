@@ -232,7 +232,7 @@ function Main(props) {
   const selectDashboard = useCallback(() => {
     smoothScrollTop();
     document.title = "WaVer - Dashboard";
-    setSelectedTab("Dashboard");
+    setSelectedTab("Publication");
     if (!hasFetchedCardChart) {
       setHasFetchedCardChart(true);
       import("../../shared/components/CardChart").then((Component) => {

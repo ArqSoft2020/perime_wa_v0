@@ -151,14 +151,14 @@ function NavBar(props) {
 
   const menuItems = [
     {
-      link: "/c/dashboard",
+      link: "/user/publication",
       name: "Map",
       onClick: closeMobileDrawer,
       icon: {
         desktop: (
           <ExploreIcon
             className={
-              selectedTab === "Dashboard" ? classes.textPrimary : "text-white"
+              selectedTab === "Publication" ? classes.textPrimary : "text-white"
             }
             fontSize="small"
           />
@@ -167,7 +167,7 @@ function NavBar(props) {
       }
     },
     {
-      link: "/c/posts",
+      link: "/user/publication",
       name: "Posts",
       onClick: closeMobileDrawer,
       icon: {
