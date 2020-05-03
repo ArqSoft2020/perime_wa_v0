@@ -52,8 +52,7 @@ function ChangePassword(props) {
       >
         <DialogContent className={classes.dialogContent}>
           <Typography paragraph>
-            Enter your email address below and we will send you instructions on
-            how to reset your password.
+          Introduzca su dirección de correo electrónico a continuación y le enviaremos instrucciones sobre cómo restablecer su contraseña.
           </Typography>
           <TextField
             variant="outlined"
