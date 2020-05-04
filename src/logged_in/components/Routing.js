@@ -6,6 +6,7 @@ import SimpleMap from "./map/SimpleMap";
 
 import PropsRoute from "../../shared/components/PropsRoute";
 import PublicationView from "./PublicationView";
+import ListSimplePublication from "./ListSimplePublication";
 
 const styles = (theme) => ({
   wrapper: {
@@ -73,6 +74,12 @@ function Routing(props) {
           pushMessageToSnackbar={pushMessageToSnackbar}
           posts={posts}
           setPosts={setPosts}
+          
+        />
+
+        <PropsRoute
+          path="/user/publications"
+          component={ListSimplePublication}
           
         />
 

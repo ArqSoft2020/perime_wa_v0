@@ -20,7 +20,7 @@ class PublicationForm extends Component{
   render(){
     return (
       <form>
-      <p> adasd</p>
+      <p> Crear publicación</p>
         <input></input>
         <input></input>
         <div>

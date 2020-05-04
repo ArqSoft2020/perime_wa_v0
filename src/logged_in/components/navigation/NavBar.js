@@ -167,14 +167,14 @@ function NavBar(props) {
       }
     },
     {
-      link: "/user/publication",
-      name: "Posts",
+      link: "/user/publications",
+      name: "Publications",
       onClick: closeMobileDrawer,
       icon: {
         desktop: (
           <EditLocationIcon
             className={
-              selectedTab === "Posts" ? classes.textPrimary : "text-white"
+              selectedTab === "Publications" ? classes.textPrimary : "text-white"
             }
             fontSize="small"
           />
