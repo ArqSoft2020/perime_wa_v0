@@ -5,7 +5,7 @@ import { ApolloProvider } from '@apollo/react-hoc';
 
 
 import App from './App';
-import Prueba from './Prueba';
+
 
 
 const client = new ApolloClient({
@@ -14,7 +14,7 @@ const client = new ApolloClient({
 
 const WrappedApp = (
   <ApolloProvider client={client}>
-    <Prueba/>
+    
     <App />
   </ApolloProvider>
 );
