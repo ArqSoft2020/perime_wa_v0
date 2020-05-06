@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import Prueba from './Prueba.js'
+
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -27,8 +27,7 @@ class SimpleMap extends Component {
             lng={-74.082778}
             text="My city"
           />
-        </GoogleMapReact>
-        <Prueba/>
+        </GoogleMapReact>        
       </div>
     );
   }
