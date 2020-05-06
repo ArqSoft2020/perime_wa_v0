@@ -20,3 +20,4 @@ const WrappedApp = (
 );
 
 render(WrappedApp, document.getElementById('root'));
+
