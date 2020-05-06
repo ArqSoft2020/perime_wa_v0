@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import SimplePublication from './publication/SimplePublication';
 import {Grid} from '@material-ui/core';
 import SimpleMap from "./map/SimpleMap"
