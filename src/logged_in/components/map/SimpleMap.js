@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
+import Prueba from './Prueba.js'
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -27,6 +28,7 @@ class SimpleMap extends Component {
             text="My city"
           />
         </GoogleMapReact>
+        <Prueba/>
       </div>
     );
   }

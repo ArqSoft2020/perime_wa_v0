@@ -1,21 +1,23 @@
-import React from "react";
-import App from "./App";
-import { render } from "react-dom";
-import ApolloClient from "apollo-boost";
-import { ApolloProvider} from "@apollo/react-hooks";
+import React from 'react';
+import { render } from 'react-dom';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hoc';
+
+
+import App from './App';
+
 
 
 const client = new ApolloClient({
-  uri: "https://rickandmortyapi.com/graphql"
+  uri: "http://104.198.185.230:3000/graphql"
 });
 
-
-const Appis = () => (
+const WrappedApp = (
   <ApolloProvider client={client}>
-    <div>
-      <App/>
-    </div>
+    
+    <App />
   </ApolloProvider>
 );
 
-render(<Appis />, document.getElementById("root"));
+render(WrappedApp, document.getElementById('root'));
+
