@@ -24,6 +24,7 @@ import ExploreIcon from '@material-ui/icons/Explore';
 import EditLocationIcon from '@material-ui/icons/EditLocation';
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import AddIcon from "@material-ui/icons/Add";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MenuIcon from "@material-ui/icons/Menu";
 import MessagePopperButton from "./MessagePopperButton";
 import Balance from "./Balance";
@@ -141,6 +142,22 @@ function NavBar(props) {
   }, [setIsMobileOpen]);
 
   const menuItems = [
+    {
+      link: "/user/profile",
+      name: "Profile",
+      onClick: closeMobileDrawer,
+      icon: {
+        desktop: (
+          <AccountCircleIcon
+            className={
+              selectedTab === "Publication" ? classes.textPrimary : "text-white"
+            }
+            fontSize="small"
+          />
+        ),
+        mobile: <AccountCircleIcon className="text-white" />
+      }
+    },
     {
       link: "/user/map",
       name: "Map",
