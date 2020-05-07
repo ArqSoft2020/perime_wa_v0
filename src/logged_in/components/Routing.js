@@ -7,6 +7,7 @@ import SimpleMap from "./map/SimpleMap";
 import PropsRoute from "../../shared/components/PropsRoute";
 import PublicationView from "./PublicationView";
 import ListSimplePublication from "./ListSimplePublication";
+import SimpleMapView from "./SimpleMapView";
 
 const styles = (theme) => ({
   wrapper: {
@@ -84,8 +85,8 @@ function Routing(props) {
         />
 
         <PropsRoute
-          path="map"
-          component={SimpleMap}
+          path="/user/map"
+          component={SimpleMapView}
           toggleAccountActivation={toggleAccountActivation}
           pushMessageToSnackbar={pushMessageToSnackbar}
           CardChart={CardChart}

@@ -23,6 +23,7 @@ import {
 import ExploreIcon from '@material-ui/icons/Explore';
 import EditLocationIcon from '@material-ui/icons/EditLocation';
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
+import AddIcon from "@material-ui/icons/Add";
 import MenuIcon from "@material-ui/icons/Menu";
 import MessagePopperButton from "./MessagePopperButton";
 import Balance from "./Balance";
@@ -141,7 +142,7 @@ function NavBar(props) {
 
   const menuItems = [
     {
-      link: "/user/publication",
+      link: "/user/map",
       name: "Map",
       onClick: closeMobileDrawer,
       icon: {
@@ -170,6 +171,17 @@ function NavBar(props) {
           />
         ),
         mobile: <EditLocationIcon className="text-white" />
+      }
+    },
+
+    {
+      link: "/user/publication",
+      name: "New publication",
+      icon: {
+        desktop: (
+          <AddIcon className="text-white" fontSize="small" />
+        ),
+        mobile: <AddIcon className="text-white" />
       }
     },
 
