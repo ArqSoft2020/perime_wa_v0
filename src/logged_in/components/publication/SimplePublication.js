@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Publicaciones from './GetPublications'
+import Users from '../user/users'
 
 const useStyles = makeStyles({
   root: {
@@ -19,6 +21,8 @@ export default function SimplePublication() {
 
   return (
     <Card className={classes.root}>
+      <Publicaciones/>
+      <Users/>
       <CardActionArea>
         <CardMedia
           component="img"
