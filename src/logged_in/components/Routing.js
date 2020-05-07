@@ -7,6 +7,8 @@ import SimpleMap from "./map/SimpleMap";
 import PropsRoute from "../../shared/components/PropsRoute";
 import PublicationView from "./PublicationView";
 import ListSimplePublication from "./ListSimplePublication";
+import SimpleMapView from "./SimpleMapView";
+import ProfileView from "./ProfileView";
 
 const styles = (theme) => ({
   wrapper: {
@@ -78,14 +80,27 @@ function Routing(props) {
         />
 
         <PropsRoute
+          path="/user/profile"
+          component={ProfileView}
+          EmojiTextArea={EmojiTextArea}
+          ImageCropper={ImageCropper}
+          Dropzone={Dropzone}
+          DateTimePicker={DateTimePicker}
+          pushMessageToSnackbar={pushMessageToSnackbar}
+          posts={posts}
+          setPosts={setPosts}
+          
+        />
+
+        <PropsRoute
           path="/user/publications"
           component={ListSimplePublication}
           
         />
 
         <PropsRoute
-          path="map"
-          component={SimpleMap}
+          path="/user/map"
+          component={SimpleMapView}
           toggleAccountActivation={toggleAccountActivation}
           pushMessageToSnackbar={pushMessageToSnackbar}
           CardChart={CardChart}
