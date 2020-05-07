@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GetPublications from './GetPublications';
+import GetPublication from './GetPublication';
 import{
   TextField,
   Grid,
@@ -49,7 +49,7 @@ class PublicationForm extends Component{
   render(){
     return (
       <form>
-        <GetPublications/>
+        <GetPublication/>
       <Typography variant="h4" gutterBottom>
         Nueva Publicación
       </Typography>
