@@ -55,36 +55,36 @@ function SimpleUser() {
         <CardMedia
           component="img"
           alt="Image url"
-          height="180"
+          height="140"
           image="/static/images/cards/contemplative-reptile.jpg"
           title="User"
         />
         <CardContent>
-          <Typography gutterBottom variant="h4" component="h6">
+          <Typography gutterBottom variant="h5" component="h6">
             <p>
-                {data.getUser.username_user}! 
+                Hello {data.getUser.username_user}! 
             </p>
           </Typography>
 
-          <Typography gutterBottom variant="h6" component="h6">
+          <Typography variant="h6" component="h6">
             <p>
-                So you came here looking for your personal information... Let's go! 
+                Let's see what we have in here...! 
             </p>
           </Typography>
 
           <Typography variant="body1" color="textSecondary" component="p">
             <p>
-                {data.getUser.email_user}
+                For your login {data.getUser.email_user}...
             </p>
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body1" color="textSecondary" component="p">
             <p>
-                {data.getUser.address_user}
+                Where they will pick up the product {data.getUser.address_user}...
             </p>
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body1" color="textSecondary" component="p">
             <p>
-                {data.getUser.cellphone_user}
+                Here people will contact you {data.getUser.cellphone_user}
             </p>
           </Typography>
         </CardContent>
