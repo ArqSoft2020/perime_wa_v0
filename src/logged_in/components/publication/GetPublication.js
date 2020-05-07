@@ -5,9 +5,6 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider, useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
-const client = new ApolloClient({
-  uri: `http://104.198.185.230:3000/`
-});
 
 const GET_DOGS = gql`
 {
@@ -77,13 +74,13 @@ function PublicationPhoto({ id }) {
 
   return (
     <div>
-      <p>{data.getPublication._id}</p>     
-      <p>{data.getPublication.title}</p>      
-      <p>{data.getPublication.contact_information}</p>
-      <p>{data.getPublication.id_image}</p>
-      <p>{data.getPublication.expiration_date}</p>
-      <p>{data.getPublication.price}</p>
-      <p>{data.getPublication.categories}</p>
+      <p>id: {data.getPublication._id}</p>     
+      <p>title: {data.getPublication.title}</p>      
+      <p>Contact: {data.getPublication.contact_information}</p>
+      <p>id imagen: {data.getPublication.id_image}</p>
+      <p>expiration date: {data.getPublication.expiration_date}</p>
+      <p>price: {data.getPublication.price}</p>
+      <p>category: {data.getPublication.categories}</p>
       <button onClick={() => refetch()}>Refetch plus!</button>
 
     </div>
@@ -99,7 +96,7 @@ class App extends Component {
 
   render() {
     return (
-      <ApolloProvider client={client}>
+      
         <div>
           
           {this.state.selectedPublication && (
@@ -107,10 +104,10 @@ class App extends Component {
           )}
           <Publications onPublicationSelected={this.onPublicationSelected} />
         </div>
-      </ApolloProvider>
+      
     );
   }
 }
 
-render(<App />, document.getElementById("root"));
-export default render(<App />, document.getElementById("root"));;
+
+export default App;
