@@ -21,8 +21,7 @@ const UsersQuery = gql`
       passhash_user
       address_user
       cellphone_user
-      email_user
-      
+      email_user      
     }
   }
 `;
