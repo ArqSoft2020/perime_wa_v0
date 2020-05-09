@@ -26,11 +26,45 @@ import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import AddIcon from "@material-ui/icons/Add";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MenuIcon from "@material-ui/icons/Menu";
+import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount"
 import MessagePopperButton from "./MessagePopperButton";
 import Balance from "./Balance";
 import NavigationDrawer from "../../../shared/components/NavigationDrawer";
 import profilePicture from "../../dummy_data/images/profilePicture.jpg";
+import SideDrawer from "./SideDrawer"
 
+import { useQuery } from "@apollo/react-hooks";
+import gql from "graphql-tag";
+
+const GET_USER_QUERY = gql`
+query usurio($id: ID){
+  getUser(id : $id){
+    username_user
+  }
+}
+`;
+function SimpleUser() {  
+  const id = 1;
+
+  const { loading, error, data,  networkStatus } = useQuery(
+    GET_USER_QUERY,
+    {
+      variables: { id },
+      notifyOnNetworkStatusChange: true
+      // pollInterval: 500
+    }
+  );
+
+  if (networkStatus === 4) return "Refetching!";
+  if (loading) return null;
+  if (error) return `Error!: ${error}`;
+
+  return (    
+            <div>
+            {data.getUser.username_user}!
+            </div>        
+  );
+}
 const styles = theme => ({
   appBar: {
     boxShadow: theme.shadows[6],
@@ -79,7 +113,7 @@ const styles = theme => ({
     border: 0,
     width: theme.spacing(7),
     overflowX: "hidden",
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(12),
     [theme.breakpoints.up("sm")]: {
       width: theme.spacing(9)
     },
@@ -131,7 +165,7 @@ function NavBar(props) {
   // Will be use to make website more accessible by screen readers
   const links = useRef([]);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  
+  const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);
 
   const openMobileDrawer = useCallback(() => {
     setIsMobileOpen(true);
@@ -140,7 +174,13 @@ function NavBar(props) {
   const closeMobileDrawer = useCallback(() => {
     setIsMobileOpen(false);
   }, [setIsMobileOpen]);
+  const openDrawer = useCallback(() => {
+    setIsSideDrawerOpen(true);
+  }, [setIsSideDrawerOpen]);
 
+  const closeDrawer = useCallback(() => {
+    setIsSideDrawerOpen(false);
+  }, [setIsSideDrawerOpen]);
   const menuItems = [
     {
       link: "/user/profile",
@@ -265,24 +305,27 @@ function NavBar(props) {
             <MessagePopperButton messages={messages} />
             <ListItem
               disableGutters
-              className={classNames(classes.iconListItem, classes.smBordered)}
+              className={classNames(classes.iconListItem)}
             >
-              <Avatar
-                alt="profile picture"
-                src={profilePicture}
-                className={classNames(classes.accountAvatar)}
-              />
               {isWidthUp("sm", width) && (
-                <ListItemText
-                  className={classes.username}
-                  primary={
-                    <Typography color="textPrimary">Username</Typography>
-                  }
+                <ListItemText                  
+                    primary={
+                      <Typography color="textPrimary">
+                         <IconButton
+                        onClick={openDrawer}
+                        color="primary"
+                        aria-label="Open Sidedrawer"
+                      >
+                        <SimpleUser/> 
+                      </IconButton>
+                      <SideDrawer open={isSideDrawerOpen} onClose={closeDrawer} />
+                                                   
+                      </Typography>
+                    }
                 />
               )}
             </ListItem>
           </Box>
-         
         </Toolbar>
       </AppBar>
       <Hidden xsDown>

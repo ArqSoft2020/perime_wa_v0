@@ -14,6 +14,7 @@ const styles = (theme) => ({
   wrapper: {
     margin: theme.spacing(1),
     width: "auto",
+    background: 'linear-gradient(to bottom right, blue, white)',   
     [theme.breakpoints.up("xs")]: {
       width: "105%",
       marginLeft: "auto",
@@ -43,6 +44,10 @@ const styles = (theme) => ({
       marginRight: "auto",
     },
   },
+  contenedor:
+  {
+    paddingTop: "5px",
+  }
 });
 
 function Routing(props) {

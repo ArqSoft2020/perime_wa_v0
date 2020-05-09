@@ -10,12 +10,16 @@ import {
   withStyles
 } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
-
+import User from "../user/SimpleUser"
 const drawerWidth = 240;
 
 const styles = {
   toolbar: {
-    minWidth: drawerWidth
+    minWidth: drawerWidth,
+    background: "rgba(201, 76, 76,0.2)"
+  },
+  user:{
+    background: "rgba(201, 76, 76,0.2)",
   }
 };
 
@@ -32,7 +36,7 @@ function SideDrawer(props) {
           width="100%"
           alignItems="center"
         >
-          <Typography variant="h6">A Sidedrawer</Typography>
+          <Typography variant="h6">Mi cuenta</Typography>
           <IconButton
             onClick={onClose}
             color="primary"
@@ -43,6 +47,7 @@ function SideDrawer(props) {
         </Box>
       </Toolbar>
       <Divider />
+      <User  className={classes.user}/>
     </Drawer>
   );
 }
