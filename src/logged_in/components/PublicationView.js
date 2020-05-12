@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 import PublicationForm from "./publication/PublicationForm";
 
 
-import GetPublications  from  "./publication/GetPublications";
+import DeleteId  from  "./publication/DeletePublicationId";
 
 class PublicationView extends Component {
   render() {
@@ -15,7 +15,7 @@ class PublicationView extends Component {
       <div>
         <Grid container>
           <Grid xs={6} sm={3} container direction="column">
-            <GetPublications/>
+            <DeleteId/>
             hello
           </Grid>
           <Grid xs={12} sm={9}>
