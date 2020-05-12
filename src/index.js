@@ -13,8 +13,7 @@ const client = new ApolloClient({
 });
 
 const WrappedApp = (
-  <ApolloProvider client={client}>
-    
+  <ApolloProvider client={client}>    
     <App />
   </ApolloProvider>
 );
