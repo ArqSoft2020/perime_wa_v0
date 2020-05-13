@@ -7,7 +7,6 @@ import{
 }  from '@material-ui/core/' ;
 
 import DataPickers from "./form/DataPickers"
-import Price from "./form/Price"
 
 import {
   MuiPickersUtilsProvider,
@@ -29,6 +28,7 @@ class PublicationForm extends Component{
     super(props);
     
     this.state = {
+      price : '1000',
       email : '',
       password : ''
    
@@ -36,9 +36,13 @@ class PublicationForm extends Component{
 
   }
 
-  handleDateChange = (date) => {
-    this.setSelectedDate(date);
-  };
+  // handleDateChange = (date) => {
+  //   this.setSelectedDate(date);
+  // };
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
 
   aumentar = () => {
        this.setState({
@@ -46,29 +50,23 @@ class PublicationForm extends Component{
        })
   }
 
+  changePrice = (newTitle) => {
+    this.setState({title:newTitle});
+  }
   render(){
     return (
       <form>
         <GetPublication/>
       <Typography variant="h4" gutterBottom>
-        Nueva Publicación
+        Nueva Publicación  {this.state.price}
       </Typography>
-      <TextField
-          id="title"
-          label="Titulo de Publicación"
-          style={{ margin: 8 }}
-          placeholder="Inserta el titulo de tu publicación"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
+
+
+
 
         <TextField
           id="description"
           label="Descripción de la publicación"
-          Descripción de la publicación
           multiline
           fullWidth
           rows={4}
@@ -99,7 +97,22 @@ class PublicationForm extends Component{
 
 
       <DataPickers />
-      <Price />
+
+      <Grid container justify="space-around">
+        <FormControl   variant="outlined">
+          <InputLabel htmlFor="price">Precio</InputLabel>
+          <OutlinedInput
+            id="price"
+            /* Cuando se traigan los datos de losPrecios.com se debe usar value */
+            value={values.price}
+            onChange={handleChange('price')}
+            startAdornment={<InputAdornment position="start">$</InputAdornment>}
+            labelWidth={60}
+          />
+        </FormControl>
+      </Grid>
+
+     
 
 
       </form>
