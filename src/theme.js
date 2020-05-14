@@ -99,7 +99,7 @@ const theme = createMuiTheme({
     },
     MuiDialog: {
       paper: {
-        width: "100%",
+        width: "90%",
         maxWidth: 430,
         marginLeft: spacing,
         marginRight: spacing

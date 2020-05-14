@@ -2,21 +2,17 @@ import React, { memo } from "react";
 import PropTypes from "prop-types";
 import { Switch } from "react-router-dom";
 import { withStyles } from "@material-ui/core";
-import SimpleMap from "./map/SimpleMap";
-
 import PropsRoute from "../../shared/components/PropsRoute";
 import PublicationView from "./PublicationView";
-import ListSimplePublication from "./ListSimplePublication";
 import SimpleMapView from "./SimpleMapView";
 import ProfileView from "./ProfileView";
+import Publicaciones from './publication/GetPublications'
 
 const styles = (theme) => ({
-  wrapper: {
-    margin: theme.spacing(1),
-    width: "auto",
-    background: 'linear-gradient(to bottom right, blue, white)',   
+  wrapper: {    
+    width: "90%",       
     [theme.breakpoints.up("xs")]: {
-      width: "105%",
+      width: "100%",
       marginLeft: "auto",
       marginRight: "auto",
       marginTop: theme.spacing(4),
@@ -44,10 +40,6 @@ const styles = (theme) => ({
       marginRight: "auto",
     },
   },
-  contenedor:
-  {
-    paddingTop: "5px",
-  }
 });
 
 function Routing(props) {
@@ -99,7 +91,7 @@ function Routing(props) {
 
         <PropsRoute
           path="/user/publications"
-          component={ListSimplePublication}
+          component={Publicaciones}
           
         />
 
