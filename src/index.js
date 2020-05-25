@@ -9,7 +9,7 @@ import App from './App';
 
 
 const client = new ApolloClient({
-  uri: "http://104.198.185.230:3000/graphql"
+  uri: "http://104.198.185.230"
 });
 
 const WrappedApp = (
