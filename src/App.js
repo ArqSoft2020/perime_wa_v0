@@ -5,6 +5,7 @@ import theme from "./theme";
 import GlobalStyles from "./GlobalStyles";
 import * as serviceWorker from "./serviceWorker";
 import Pace from "./shared/components/Pace";
+import Messaging from './Messaging'
 
 const LoggedInComponent = lazy(() => import("./logged_in/components/Main"));
 
@@ -20,10 +21,12 @@ function App() {
         <Suspense fallback={<Fragment />}>
           <Switch>
             <Route path="/user">
+            <Messaging/>
               <LoggedInComponent />
             </Route>
             <Route>
               <LoggedOutComponent />
+              <Messaging/>
             </Route>
           </Switch>
         </Suspense>
