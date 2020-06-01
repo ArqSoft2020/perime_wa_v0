@@ -13,7 +13,7 @@ export default class Messaging extends Component {
     messaging.requestPermission().then(()=>{
       return messaging.getToken()
     }).then(token=>{
-      console.log('Token : ',token)
+      console.log('Token: ',token)
     }).catch((err)=>{
       console.log(err);
       
